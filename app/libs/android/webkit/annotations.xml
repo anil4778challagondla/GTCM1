@@ -1,0 +1,5 @@
+<root>
+    <item name='android.webkit.DownloadListener'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

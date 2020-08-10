@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:gravity="center"
+              >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="4dp">
+                    <in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout
+                        android:id="@+id/scratchCard2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:scratchWidth="40dp"
+                        app:scratchEnabled="true"
+                        app:scratchRevealFullAtPercent="100">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+
+
+                            <ImageView
+                                android:id="@+id/gameimageid"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/gametvid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:fontFamily="@font/gilroymedium"
+                                android:textSize="18sp" />
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/collectcardView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:visibility="gone"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="30dp"
+                                app:cardBackgroundColor="@color/logocolor"
+                                app:cardCornerRadius="8dp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/gilroybold"
+                                        android:text="Collect your prize"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp">
+
+                                    </TextView>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+
+                        <!--Your complex view here-->
+
+                    </in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout>
+
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+<!--    app:overlay_image=""-->
+
+</RelativeLayout>

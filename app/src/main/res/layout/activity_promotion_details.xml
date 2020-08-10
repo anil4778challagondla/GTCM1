@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:background="@drawable/lightbackground"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PromotionDetails">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/applogoblue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/imageViewMerchant"
+                        android:layout_width="match_parent"
+                        android:scaleType="fitXY"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="40dp">
+                <TextView
+                    android:id="@+id/textDealname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Limited Edition utcome Package"
+                    android:gravity="center"
+                    android:textSize="16sp"
+
+                    android:maxLines="2"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/gilroymedium"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageViewDeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="8dp">
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/dealPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:singleLine="true"
+                    android:text="24.00" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sellingpkrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:singleLine="true"
+                    android:text="18.00" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnredeemlinear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btngetitnow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/logocolor"
+                    android:text="getitnow"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <TextView
+        android:id="@+id/descpi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attributeslayout"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="Description :"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descpi"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+    <TextView
+        android:id="@+id/cond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtdescription"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="@dimen/margin_five"
+        android:gravity="left"
+        android:text="Conditions :"
+
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtconditions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cond"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp" />
+
+    <View
+        android:id="@+id/view9"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/txtconditions"
+        android:background="@color/colorPrimary"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/businessname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view9"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:gravity="left"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+
+                    android:textColor="@color/colorAccent"
+                    android:paddingBottom="10dp"
+                    android:text="Partner name :" />
+                <TextView
+                    android:id="@+id/businessnameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtconditions"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:layout_toRightOf="@+id/businessname"
+                    android:gravity="left"
+                    android:paddingBottom="@dimen/margin_five"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>

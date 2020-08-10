@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent" >
+   <ImageView
+       android:id="@+id/image"
+       android:layout_width="50dp"
+       android:layout_centerHorizontal="true"
+       android:src="@drawable/logo"
+       android:layout_marginTop="10dp"
+       android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/resultalerttvid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Text Here" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/resultalerttvid"
+        android:layout_marginTop="20dp"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/cancelbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="No"
+            android:textAllCaps="false"
+            android:layout_marginRight="10dp"
+            android:visibility="visible"
+            android:background="@drawable/roundedbutton"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/okbtnid"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Yes"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/roundedbutton"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

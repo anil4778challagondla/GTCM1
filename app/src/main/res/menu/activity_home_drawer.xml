@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeid"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/donateid"
+            android:title="Quiz" />
+        <item
+            android:id="@+id/notificationsid"
+            android:title="Voice Quiz" />
+        <item
+            android:id="@+id/promotionsid"
+            android:title="Promotions" />
+        <item
+        android:id="@+id/smartquizid"
+        android:title="Smart Quiz" />
+        <item
+        android:id="@+id/surveyid"
+        android:title="Survey" />
+        <item
+        android:id="@+id/reedemid"
+        android:title="Reedem" />
+        <item
+            android:id="@+id/gameid"
+            android:title="Games" />
+        <item
+            android:id="@+id/myprofileid"
+            android:title="Profile" />
+        <item
+            android:id="@+id/infoid"
+            android:title="Info" />
+        <item
+            android:id="@+id/Donateid"
+            android:title="Donate" />
+        <item
+            android:id="@+id/projectsid"
+            android:title="Projects" />
+        <item
+            android:id="@+id/logoutid"
+            android:title="Logout" />
+    </group>
+
+
+</menu>

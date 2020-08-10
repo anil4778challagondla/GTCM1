@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lightbackground"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/applogoblue"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="2"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/offertabbtn"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tabpromotvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/logocolor"
+                android:text="PROMOTIONS"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/gamestabbtn"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/logocolor"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tabgamestvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="GAMES"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/offerslayourid"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ship to:"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/gilroymedium"
+
+                        android:layout_weight="3"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="#305,sri sai priya appartment,near tv tower busstop,moosrambhag,malkapet,hyderabad,500036"
+                        android:textSize="18sp"
+                        android:maxLines="3"
+                        android:fontFamily="@font/gilroymedium"
+                        android:layout_weight="7"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="10"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pay with:"
+                        android:fontFamily="@font/gilroymedium"
+
+                        android:textSize="18sp"
+                        android:layout_weight="3"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=" Debit Card / Credit card"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/gilroymedium"
+                        android:layout_weight="7"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/logocolor">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/gilroymedium"
+                        android:layout_marginLeft="30dp"
+                        android:text="Items in the Cart"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/offercartrecyclerviewid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/logocolor">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/gilroymedium"
+                        android:layout_marginLeft="30dp"
+                        android:text="Order Summary"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Item Total "
+                            android:textSize="18sp"
+                            android:fontFamily="@font/gilroymedium"
+                            android:textColor="@color/colorPrimary"
+
+                            android:layout_weight="5"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="$35.00"
+                            android:textSize="18sp"
+                            android:maxLines="1"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:textColor="@color/colorPrimary"
+                            android:fontFamily="@font/gilroymedium"
+                            android:layout_weight="5"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Shipping"
+                            android:fontFamily="@font/gilroymedium"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textSize="18sp"
+                            android:layout_weight="5"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="$10.00"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:textColor="@color/colorPrimary"
+                            android:fontFamily="@font/gilroymedium"
+                            android:layout_weight="5"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Order Total"
+                            android:fontFamily="@font/gilroymedium"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textSize="18sp"
+                            android:layout_weight="5"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="$45.00"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:textColor="@color/colorPrimary"
+                            android:fontFamily="@font/gilroymedium"
+                            android:layout_weight="5"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/gilroymedium"
+                        android:textSize="18sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:text="By Pressing PAY you agree to the Terms and Conditions and Privacy Policy. "/>
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/paynow"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="50dp"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/gameslayourid"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/gilroymedium"
+                        android:layout_marginLeft="30dp"
+                        android:text="Items In the Cart"/>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/gamescartrecyclerviewid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/redeemrecyclerviewid"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginLeft="30dp"-->
+    <!--        android:layout_marginRight="30dp"-->
+    <!--        android:layout_marginTop="10dp"/>-->
+</LinearLayout>

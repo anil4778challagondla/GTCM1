@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lightbackground"
+    tools:context=".Activity.GameDetails">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/applogoblue"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <ImageView
+                        android:id="@+id/gamedetailbackbtnid"
+                        android:layout_width="0dp"
+                        android:src="@drawable/ic_chevron_left_black_24dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/gamenamedetailsid"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="23sp"
+                        android:fontFamily="@font/gilroymedium"
+
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:text=""/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="8">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp">
+                            <ImageView
+                                android:id="@+id/gameimagedetailsid"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:padding="2dp"
+                                android:scaleType="fitXY"/>
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/gamedetailsdescid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:fontFamily="@font/gilroymedium"
+
+                            android:layout_marginTop="10dp"
+                            />
+                        <TextView
+                            android:id="@+id/gamedetailscondid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:fontFamily="@font/gilroymedium"
+
+                            android:layout_marginTop="10dp"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="50dp"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:weightSum="2"
+                                android:padding="10dp"
+
+                                android:orientation="vertical"
+                                >
+                                <TextView
+                                    android:id="@+id/offerdetailsretailerpriceid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/gilroymedium"
+
+                                    android:textStyle="normal"
+                                    android:layout_gravity="center"/>
+                                <TextView
+                                    android:id="@+id/offerdetailssellingpriceid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/gilroymedium"
+
+                                    android:textStyle="normal"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_gravity="center"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+                                <ImageView
+                                    android:id="@+id/gamedetailsplaynowbtnid"
+                                    android:padding="10dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/playnow"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                >
+                                <TextView
+                                    android:id="@+id/offerdetailsfindusid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Find us"
+                                    android:visibility="gone"
+                                    android:fontFamily="@font/gilroymedium"
+
+                                    android:textStyle="bold"
+                                    android:textColor="@color/logocolor"/>
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="2dp"
+                                    android:visibility="gone"
+                                    android:background="@color/logocolor"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+
+                        android:layout_width="0dp"
+                        android:scaleType="fitXY"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

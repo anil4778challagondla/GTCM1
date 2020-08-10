@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+    <LinearLayout
+        android:id="@+id/chatcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/chatcusprofileimageid"
+                android:layout_width="45dp"
+                android:layout_height="45dp"/>
+            <TextView
+                android:id="@+id/chatprofilenametvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_alignTop="@id/chatcusprofileimageid"
+                android:layout_toRightOf="@id/chatcusprofileimageid"
+                android:fontFamily="@font/gilroysemibold"
+                android:textColor="@color/profilename"
+                android:text="Anil kumar challagondla"
+                />
+            <TextView
+                android:id="@+id/chatmessagetvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_alignBottom="@id/chatcusprofileimageid"
+                android:layout_toRightOf="@id/chatcusprofileimageid"
+                android:fontFamily="@font/gilroymedium"
+                android:textColor="@color/black"
+                android:text="Anil this is test message for chat list in android ,his this is"
+                />
+
+            <TextView
+                android:id="@+id/chattimetvid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chatmessagetvid"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="13dp"
+                android:fontFamily="@font/gilroylight"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:text="12 jun 2020 12:30 Pm"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/black_overlay"/>
+
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

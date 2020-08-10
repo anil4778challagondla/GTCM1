@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lightbackground"
+    tools:context=".Activity.QuizQuestuions">
+    <ScrollView
+        android:id="@+id/quiz_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="8dp"
+              >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/quizimageid"
+                        android:layout_width="match_parent"
+                        android:scaleType="fitXY"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:gravity="right"
+                    android:textColor="#dd000000"
+                    android:textStyle="bold"
+                    android:text="Q)"
+                    />
+                <TextView
+                    android:id="@+id/questiontvid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:layout_weight="9"
+                    android:textStyle="bold"
+                    android:textColor="#dd000000"
+                    android:text="What kind of musical instrument,   King David used to play?"
+                    />
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:textStyle="normal"
+                android:textColor="#dd000000"
+                android:text="Please, Swipe the images to Answer the Question"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_height="120dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        >
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="4dp">
+                            <in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout
+                                android:id="@+id/scratchCard1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                app:scratchWidth="40dp"
+                                app:scratchEnabled="true"
+                                app:scratchRevealFullAtPercent="100">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="15dp">
+
+
+                                    <ImageView
+                                        android:id="@+id/quizimage1id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/wrong"/>
+
+
+
+                                </LinearLayout>
+
+
+
+                                <!--Your complex view here-->
+
+                            </in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        >
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_view2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="4dp">
+                            <in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout
+                                android:id="@+id/scratchCard2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                app:scratchWidth="40dp"
+                                app:scratchEnabled="true"
+                                app:scratchRevealFullAtPercent="100">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="15dp">
+
+
+                                    <ImageView
+                                        android:id="@+id/quizimage2id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/right"/>
+
+
+
+                                </LinearLayout>
+
+
+
+                                <!--Your complex view here-->
+
+                            </in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        >
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_view3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="4dp">
+                            <in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout
+                                android:id="@+id/scratchCard3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                app:scratchWidth="40dp"
+                                app:scratchEnabled="true"
+                                app:scratchRevealFullAtPercent="100">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:padding="15dp">
+
+
+                                    <ImageView
+                                        android:id="@+id/quizimage3id"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/wrong"/>
+
+
+
+                                </LinearLayout>
+
+
+
+                                <!--Your complex view here-->
+
+                            </in.codeshuffle.scratchcardlayout.ui.ScratchCardLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/nxt_btn"
+                android:layout_margin="05dp"
+                android:text="NEXT"
+                android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/quizoptionsrecyclerid"/>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:id="@+id/timerlayout"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/count"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="32sp"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/resultslayout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/gamestatus"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:padding="05dp"
+            android:layout_height="wrap_content"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/sno"
+                android:text="SNO"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1" />
+            <TextView
+                android:id="@+id/rank"
+                android:text="Rank"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.1" />
+            <TextView
+                android:id="@+id/name"
+                android:text="Name"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9" />
+
+            <TextView
+                android:id="@+id/answered"
+                android:text="Answered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:text="Duration"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

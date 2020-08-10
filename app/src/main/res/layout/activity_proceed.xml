@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Activity.Proceed">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/applogo"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:fontFamily="@font/bebasneueregular"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="BULIDING TOGETHER...REACHING THE UNREACHED"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+
+        android:textSize="18dp"
+        android:text="GTCM was born through\nthe vision of God given by\nApostle Dr.Livingston Gadde,\nDr.David Chigurupati and Dr.Joseph Paturi\nto renew and revive\nTelugu Christians worldwide."/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18dp"
+    android:textColor="@color/white"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginTop="20dp"
+    android:text="After much prayer,\nGlobal Telugu Christian Conferences\nare held around the world with\nthe support of Telugu Christians\nand with many of God's servants\ncatching the vision."/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:textSize="10dp"
+        android:text="G.T.C.M is registered as a trust at Hyderabad. A.p India in March 2001\nwith Apostle Dr.Livingston Gadde as the President\nRev.Dr.K Paul Devakumar as the vice president\nand Rev M.Yesupadam as the General Secretary. "/>
+    <ImageView
+        android:id="@+id/proceedivid"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/proceed"
+        />
+</LinearLayout>

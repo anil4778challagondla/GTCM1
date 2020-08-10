@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gmi.gtcm">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.Newchatmessage"></activity>
+        <activity android:name=".Activity.Chatscreen"
+            android:theme="@style/NoAppTheme"/>
+        <activity
+            android:name=".Activity.VoiceQuizQuestions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VoiceQuizActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Messagescreen"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activity.TextQuizQuestions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.TextQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.GameDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Gameslist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Reedem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SurveyQuestions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Survey"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PromotionDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Promotions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PartnerDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.GroupsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Livestreaming"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www14.communion.com"
+                    android:scheme="gtcm" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.communion.com"
+                    android:scheme="gtcm" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activity.Imagepostmessage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.QuizQuestuions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SmartQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ProjectsDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Projects"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.EventDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Dailydevotion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Messageboard2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PostMessage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Groupspage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Imageviews"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.YoutubeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Mywebview"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Notifications"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Myprofile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.MessageBoard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Partners"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Notices"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Gtcmplayer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Medialist"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Media"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Events"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Activity.Home"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoAppTheme" />
+        <activity
+            android:name=".Activity.Login"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".Activity.Subscription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Proceed"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

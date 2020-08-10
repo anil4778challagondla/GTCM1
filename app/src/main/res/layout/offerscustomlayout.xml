@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:project="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="8dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10sp"
+        android:id="@+id/offerlayoutid"
+
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <android.support.v7.widget.CardView
+                android:id="@+id/partnerimagcrad"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/partnerimage"
+                        android:layout_width="match_parent"
+                        android:scaleType="fitXY"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/offernameid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Limited Edition Outcome Package Limited Edition Outcome Package Limited Edition Outcome Package"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:paddingLeft="10dp"
+                android:fontFamily="@font/gilroymedium"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:cardCornerRadius="8dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+
+               >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/offersimageid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/offerdescid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Limited Edition Outcome Package Limited Edition Outcome Package Limited Edition Outcome Package"
+            android:gravity="left"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:paddingTop="5dp"
+            android:fontFamily="@font/gilroymedium"
+
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="top"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+           >
+            <TextView
+                android:id="@+id/offerretailerpriceid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="24.00"
+                android:fontFamily="@font/gilroymedium"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/offersellingpriceid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="24.00"
+                android:gravity="center"
+                android:fontFamily="@font/gilroymedium"
+
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>

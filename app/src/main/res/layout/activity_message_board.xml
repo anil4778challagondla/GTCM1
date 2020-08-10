@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Activity.MessageBoard">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/applogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/lightbackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbarmessage1"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TabLayout
+                android:layout_width="match_parent"
+                android:id="@+id/MyTabmessage1"
+                app:tabTextColor="@color/blue"
+                app:tabSelectedTextColor="@color/logocolor"
+                app:tabIndicatorColor="@color/logocolor"
+                app:tabBackground="@color/white"
+                android:layout_height="40dp">
+
+            </android.support.design.widget.TabLayout>
+
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<include layout="@layout/content_main" />-->
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:id="@+id/myViewPagermessage1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/appbarmessage1"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/homebtnid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/homeicon" />
+
+        <ImageView
+            android:id="@+id/donatebtnid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/donationicon" />
+
+        <ImageView
+            android:id="@+id/notificationbtnid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/notificationicon" />
+
+        <ImageView
+            android:id="@+id/profilebtnid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/profileicon" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

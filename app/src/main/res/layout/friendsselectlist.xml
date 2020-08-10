@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:id="@+id/newchatprofilecard"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/statusralayout"
+        android:layout_width="40dp"
+        android:layout_centerHorizontal="false"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+
+        android:layout_height="40dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:id="@+id/listprofileimagenewchat"
+            app:civ_border_color="#000"
+            app:civ_border_width="2dp"
+            android:src="@drawable/user"
+            android:layout_centerHorizontal="true"
+            android:layout_height="40dp">
+
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+        <ImageView
+            android:id="@+id/statusimagenewchatid"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:visibility="gone"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/tick" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/profilenamenewchattvid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anil kumar challagondla"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/statusralayout"
+        android:fontFamily="@font/gilroysemibold"/>
+
+</RelativeLayout>

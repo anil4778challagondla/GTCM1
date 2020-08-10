@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#25408E</color>
+    <color name="white">#ffffff</color>
+    <color name="logocolor">#25408E</color>
+    <color name="blue">#00ADEE</color>
+    <color name="black">#000</color>
+    <color name="profilename">#6B0B94</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="profilebg1">#024175</color>
+    <color name="chatlistbg">#AD042549</color>
+    <color name="profilebg2">#18A47A</color>
+</resources>

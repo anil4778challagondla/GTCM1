@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.PostNewmessage">
+
+    <Spinner
+        android:id="@+id/groupsdropdownidmessage"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        android:background="@drawable/editprofilebtn"
+        android:layout_height="40dp"/>
+
+    <EditText
+        android:id="@+id/messageedtid"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/editprofilebtn"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:padding="10dp"
+        android:hint="Enter Message"/>
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/editprofilebtn"
+        android:layout_height="80dp">
+        <ImageView
+            android:id="@+id/createevent_setimageview"
+            android:layout_width="match_parent"
+            android:padding="2dp"
+            android:layout_height="260dp" />
+
+        <ImageView
+            android:id="@+id/createevent_uploadimagebtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_photo_camera_black_24dp"/>
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/messagesendbtnid"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        android:textSize="18dp"
+        android:background="@color/logocolor"/>
+
+
+
+</LinearLayout>
