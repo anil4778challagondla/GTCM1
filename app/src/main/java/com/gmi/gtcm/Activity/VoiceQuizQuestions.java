@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class VoiceQuizQuestions extends AppCompatActivity {
-    private TextView question, q, count, gamestatus, clue1txt, clue2txt,timer;
+    private TextView question, q, count, gamestatus, clue1txt, clue2txt,timer,anil;
     private RecyclerView gv = null;
     TextToSpeech t1;
     int duration;
@@ -68,7 +68,6 @@ public class VoiceQuizQuestions extends AppCompatActivity {
     private String custid, quizid, word = "";
     private SharedPreferences sharedPreferences;
     int i;
-     JSONArray  qarray;
     LinearLayout timerlayout, resultslayout;
     Button speak, clue1, clue2 , next;
     RecyclerView recyclerview;
@@ -143,112 +142,6 @@ public class VoiceQuizQuestions extends AppCompatActivity {
                 clue2.setVisibility(View.GONE);
             }
         });
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                answeredcount = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
-                correctansweredcount = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
-                totalpoints = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getPoints());
-                JSONArray ansarray = null;
-                try {
-                    ansarray = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getAnswers());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                if(answertxt.getText().toString().trim().equalsIgnoreCase(word)){
-                    isCorrect=1;
-                    correctansweredcount++;
-                }else {
-                    isCorrect = 0;
-                }
-                if (!answertxt.getText().toString().trim().equalsIgnoreCase("")){
-                    answeredcount++;
-                }
-                if (isCorrect==1){
-                    points = 4-hintsused;
-                }else {
-                    points=0-hintsused;
-                }
-                totalpoints = totalpoints + points;
-                if (counter<qarray.length()-1){
-                    databaseHelper.updatePositionData(String.valueOf(counter+1),quizid);
-                    JSONObject subobj=null;
-                    try {
-                        subobj = qarray.getJSONObject(counter);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    JSONObject objj = new JSONObject();
-                    try {
-                        objj.put("QuestionId",subobj.getString("SpellingBeeQuestionId"));
-                        objj.put("QuestionNumber",subobj.getString("QuestionNumber"));
-                        objj.put("Answer",answertxt.getText().toString().trim());
-                        objj.put("IsCorrect",String.valueOf(isCorrect));
-                        objj.put("UsedHints",hintsused);
-                        objj.put("Points",points);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    ansarray.put(objj);
-                    databaseHelper.updateAnswerData(ansarray.toString(),quizid);
-                    databaseHelper.updateAnsweredCount(String.valueOf(answeredcount),quizid);
-                    databaseHelper.updateCorrectCount(String.valueOf(correctansweredcount),quizid);
-                    databaseHelper.updatePoints(String.valueOf(totalpoints),quizid);
-                    databaseHelper.updateTime(String.valueOf((millis)/60000),quizid);
-                    Log.d("position", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getPosition());
-                    Log.d("points", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getPoints());
-                    Log.d("count", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
-                    Log.d("correctcount", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
-                    Log.d("Answer", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getAnswers());
-                    counter++;
-                    JSONObject qobj = null;
-                    try {
-                        qobj = qarray.getJSONObject(counter);
-                        word = qobj.getString("Question");
-                        clue1txt.setText(qobj.getString("Hint1"));
-                        clue2txt.setText(qobj.getString("Hint2"));
-                        hintsused =0;
-                        isCorrect =0;
-                        answertxt.setText("");
-                        points=0;
-                        totalpoints =0;
-                        correctansweredcount =0;
-                        answeredcount =0;
-                        clue1txt.setVisibility(View.GONE);
-                        clue2txt.setVisibility(View.GONE);
-                        clue1.setVisibility(View.VISIBLE);
-                        clue2.setVisibility(View.VISIBLE);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }else{
-                    databaseHelper.updateAnswerData(ansarray.toString(),quizid);
-                    databaseHelper.updateAnsweredCount(String.valueOf(answeredcount),quizid);
-                    databaseHelper.updateCorrectCount(String.valueOf(correctansweredcount),quizid);
-                    databaseHelper.updatePoints(String.valueOf(totalpoints),quizid);
-                    databaseHelper.updateTime(String.valueOf((millis)/60000),quizid);
-                    try {
-                        JSONArray array = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getAnswers());
-                        JSONObject result = new JSONObject();
-                        result.put("QuizId",quizid);
-                        result.put("CustomerId",custid);
-                        result.put("Duration",String.format("%.0f", (duration-Double.parseDouble(databaseHelper.getDatabyQUizId(quizid).getTime()))*60*1000));
-                        result.put("CorrectAnsweredCount",databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
-                        result.put("AnsweredCount",databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
-                        result.put("Points",databaseHelper.getDatabyQUizId(quizid).getPoints());
-                        result.put("Answers",array);
-                        Log.d("TAG", "onClick: " +result);
-                        SubmitAnswers(result.toString());
-                    } catch (JSONException  e) {
-                        e.printStackTrace();
-                    }
-
-                    Toast.makeText(VoiceQuizQuestions.this, "Questions Completed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
         Offerdata();
     }
 
@@ -279,7 +172,7 @@ public class VoiceQuizQuestions extends AppCompatActivity {
                                 int duration = obj.getInt("StartDuration");
                                 startTimer(Double.valueOf(duration)*1000, gametext,"mid");
                             } else if (IsFinished == 0) {
-//                                 duration = obj.getInt("Duration");
+                                duration = obj.getInt("Duration");
                                 quizlayout.setVisibility(View.VISIBLE);
                                 timerlayout.setVisibility(View.GONE);
                                 resultslayout.setVisibility(View.GONE);
@@ -288,17 +181,122 @@ public class VoiceQuizQuestions extends AppCompatActivity {
                                     Toast.makeText(VoiceQuizQuestions.this, "entered", Toast.LENGTH_SHORT).show();
                                     databaseHelper.insertQuestion(quizid, questionarray.toString(), "0", "[]", String.valueOf(duration), "0","0","0");
                                 }
-                                    qarray  = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getQuestions().toString());
-                                    counter = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getPosition());
-                                    final JSONObject qobje = qarray.getJSONObject(counter);
-                                    word = qobje.getString("Question");
-                                    clue1txt.setText(qobje.getString("Hint1"));
-                                    clue2txt.setText(qobje.getString("Hint2"));
-                                    Double time  = Double.parseDouble(databaseHelper.getDatabyQUizId(quizid).getTime());
-                                    startTimer(time*60*1000 , "Quiz Ends in","up");
+                                final JSONArray  qarray = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getQuestions().toString());
+                                counter = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getPosition());
+                                final JSONObject qobje = qarray.getJSONObject(counter);
+                                word = qobje.getString("Question");
+                                clue1txt.setText(qobje.getString("Hint1"));
+                                clue2txt.setText(qobje.getString("Hint2"));
+                                Double time  = Double.parseDouble(databaseHelper.getDatabyQUizId(quizid).getTime());
+                                startTimer(time*60*1000 , "Quiz Ends in","up");
+                                next.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        answeredcount = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
+                                        correctansweredcount = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
+                                        totalpoints = Integer.parseInt(databaseHelper.getDatabyQUizId(quizid).getPoints());
+                                        JSONArray ansarray = null;
+                                        try {
+                                            ansarray = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getAnswers());
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                        if(answertxt.getText().toString().trim().equalsIgnoreCase(word)){
+                                            isCorrect=1;
+                                            correctansweredcount++;
+                                        }else {
+                                            isCorrect = 0;
+                                        }
+                                        if (!answertxt.getText().toString().trim().equalsIgnoreCase("")){
+                                            answeredcount++;
+                                        }
+                                        if (isCorrect==1){
+                                            points = 4-hintsused;
+                                        }else {
+                                            points=0-hintsused;
+                                        }
+                                        totalpoints = totalpoints + points;
+                                        if (counter<qarray.length()-1){
+                                            databaseHelper.updatePositionData(String.valueOf(counter+1),quizid);
+                                            JSONObject subobj=null;
+                                            try {
+                                                subobj = qarray.getJSONObject(counter);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                            JSONObject objj = new JSONObject();
+                                            try {
+                                                objj.put("QuestionId",subobj.getString("SpellingBeeQuestionId"));
+                                                objj.put("QuestionNumber",subobj.getString("QuestionNumber"));
+                                                objj.put("Answer",answertxt.getText().toString().trim());
+                                                objj.put("IsCorrect",String.valueOf(isCorrect));
+                                                objj.put("UsedHints",hintsused);
+                                                objj.put("Points",points);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                            ansarray.put(objj);
+                                            databaseHelper.updateAnswerData(ansarray.toString(),quizid);
+                                            databaseHelper.updateAnsweredCount(String.valueOf(answeredcount),quizid);
+                                            databaseHelper.updateCorrectCount(String.valueOf(correctansweredcount),quizid);
+                                            databaseHelper.updatePoints(String.valueOf(totalpoints),quizid);
+                                            databaseHelper.updateTime(String.valueOf((millis)/60000),quizid);
+                                            Log.d("position", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getPosition());
+                                            Log.d("points", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getPoints());
+                                            Log.d("count", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
+                                            Log.d("correctcount", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
+                                            Log.d("Answer", "onClick: "+databaseHelper.getDatabyQUizId(quizid).getAnswers());
+                                            counter++;
+                                            JSONObject qobj = null;
+                                            try {
+                                                qobj = qarray.getJSONObject(counter);
+                                                word = qobj.getString("Question");
+                                                clue1txt.setText(qobj.getString("Hint1"));
+                                                clue2txt.setText(qobj.getString("Hint2"));
+                                                hintsused =0;
+                                                isCorrect =0;
+                                                answertxt.setText("");
+                                                points=0;
+                                                totalpoints =0;
+                                                correctansweredcount =0;
+                                                answeredcount =0;
+                                                clue1txt.setVisibility(View.GONE);
+                                                clue2txt.setVisibility(View.GONE);
+                                                clue1.setVisibility(View.VISIBLE);
+                                                clue2.setVisibility(View.VISIBLE);
 
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
 
-                            } else if (IsFinished == 1) {
+                                        }else{
+                                            databaseHelper.updateAnswerData(ansarray.toString(),quizid);
+                                            databaseHelper.updateAnsweredCount(String.valueOf(answeredcount),quizid);
+                                            databaseHelper.updateCorrectCount(String.valueOf(correctansweredcount),quizid);
+                                            databaseHelper.updatePoints(String.valueOf(totalpoints),quizid);
+                                            databaseHelper.updateTime(String.valueOf((millis)/60000),quizid);
+                                            try {
+                                                JSONArray array = new JSONArray(databaseHelper.getDatabyQUizId(quizid).getAnswers());
+                                                JSONObject result = new JSONObject();
+                                                result.put("QuizId",quizid);
+                                                result.put("CustomerId",custid);
+                                                result.put("Duration",String.format("%.0f", (duration-Double.parseDouble(databaseHelper.getDatabyQUizId(quizid).getTime()))*60*1000));
+                                                result.put("CorrectAnsweredCount",databaseHelper.getDatabyQUizId(quizid).getCorrectansweredcount());
+                                                result.put("AnsweredCount",databaseHelper.getDatabyQUizId(quizid).getAnsweredcount());
+                                                result.put("Points",databaseHelper.getDatabyQUizId(quizid).getPoints());
+                                                result.put("Answers",array);
+                                                Log.d("TAG", "onClick: " +result);
+                                                SubmitAnswers(result.toString());
+                                            } catch (JSONException  e) {
+                                                e.printStackTrace();
+                                            }
+
+                                            Toast.makeText(VoiceQuizQuestions.this, "Questions Completed", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
+                            } else {
                                 quizlayout.setVisibility(View.GONE);
                                 timerlayout.setVisibility(View.GONE);
                                 resultslayout.setVisibility(View.VISIBLE);
@@ -344,16 +342,16 @@ public class VoiceQuizQuestions extends AppCompatActivity {
     }
 
     private void startTimer(Double noOfMinutes, final String gametext, final String state) {
-         countDownTimer = new CountDownTimer(noOfMinutes.intValue(), 1000) {
+        countDownTimer = new CountDownTimer(noOfMinutes.intValue(), 1000) {
             public void onTick(long millisUntilFinished) {
-                 millis = Double.valueOf(millisUntilFinished);
+                millis = Double.valueOf(millisUntilFinished);
                 //Convert milliseconds into hour,minute and seconds
                 String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished), TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millisUntilFinished)), TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
-              if (state.equalsIgnoreCase("up")){
-                  timer.setText(gametext + "\n" + hms);//set text
-              }else {
-                  count.setText(gametext + "\n" + hms);//set text
-              }
+                if (state.equalsIgnoreCase("up")){
+                    timer.setText(gametext + "\n" + hms);//set text
+                }else {
+                    count.setText(gametext + "\n" + hms);//set text
+                }
 
             }
 
@@ -390,48 +388,48 @@ public class VoiceQuizQuestions extends AppCompatActivity {
         pDialog.setMessage("Please Wait...");
         pDialog.setCancelable(false);
         pDialog.show();
-            RequestQueue requestQueue = Volley.newRequestQueue(VoiceQuizQuestions.this);
-            String url="http://151.106.38.222:92/api/InsertSpellBeeCustomerQuizAnswer";
-            final String requestBody = jsonBody.toString();
-            Log.d("offers","response"+requestBody);
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    Log.d("response","response"+response);
-                    pDialog.dismiss();
-                    Offerdata();
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("VOLLEY", error.toString());
-pDialog.dismiss();
-                }
-            }) {
-                @Override
-                public String getBodyContentType() {
-                    return "application/json; charset=utf-8";
-                }
+        RequestQueue requestQueue = Volley.newRequestQueue(VoiceQuizQuestions.this);
+        String url="http://151.106.38.222:92/api/InsertSpellBeeCustomerQuizAnswer";
+        final String requestBody = jsonBody.toString();
+        Log.d("offers","response"+requestBody);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("response","response"+response);
+                pDialog.dismiss();
+                Offerdata();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("VOLLEY", error.toString());
+                pDialog.dismiss();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
 
-                @Override
-                public byte[] getBody() throws AuthFailureError {
-                    try {
-                        return requestBody == null ? null : requestBody.getBytes("utf-8");
-                    } catch (UnsupportedEncodingException uee) {
-                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
-                        return null;
-                    }
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody == null ? null : requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
+                    return null;
                 }
+            }
 
-                @Override
-                public Map<String,String> getHeaders() throws AuthFailureError {
-                    Map<String,String> headers = new HashMap<String, String>();
-                    headers.put("Content-Type", "application/json; charset=utf-8");
-                    return headers;
-                }
-            };
+            @Override
+            public Map<String,String> getHeaders() throws AuthFailureError {
+                Map<String,String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+        };
 
-            requestQueue.add(stringRequest);
+        requestQueue.add(stringRequest);
     }
 
 
